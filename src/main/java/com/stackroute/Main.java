@@ -13,9 +13,10 @@ public class Main
         context.refresh();
 
         Movie movie = (Movie) context.getBean("movie");
-        System.out.println(movie);
+        //System.out.println(movie);
 
         Movie movie1 = (Movie) context.getBean("movie1");
         System.out.println(movie1);
+        System.out.println(movie==movie1);
     }
 }
