@@ -4,6 +4,7 @@ import awareInterface.ApplicationContextAwareDemo;
 import awareInterface.BeanFactoryAwareDemo;
 import awareInterface.BeanNameAwareDemo;
 import com.stackroute.demo.BeanLifecycleDemoBean;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +18,7 @@ public class SpringBeanConfiguration {
         Actor actor=new Actor();
         actor.setActorName("Anushka");
         actor.setActorGender("female");
-        actor.setActorAge(49);
+        actor.setActorAge(39);
         return actor;}
 
     @Bean(name= "movie1")
@@ -43,6 +44,10 @@ public class SpringBeanConfiguration {
 @Bean(name={"beanLifecycleDemoBean"}, initMethod = "customInit",destroyMethod = "customDestroy")
     public BeanLifecycleDemoBean getBeanLifecycleDemoBean(){
        return new BeanLifecycleDemoBean();
+}
+@Bean(name="beanPostProcessorDemoBean")
+    public BeanPostProcessorDemoBean getBeanPostProcessorDemoBean(){
+       return new BeanPostProcessorDemoBean();
 }
 
 }
