@@ -1,25 +1,15 @@
 package com.stackroute.config;
 
+import awareInterface.ApplicationContextAwareDemo;
+import awareInterface.BeanFactoryAwareDemo;
+import awareInterface.BeanNameAwareDemo;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SpringBeanConfiguration {
-   /* @Bean(name= "movie")
-    public Movie getActor() {
-        Actor actor = new Actor("Mohanlal", "Male", 49);
-        return new Movie();
-    }
-    @Bean(name= "movie1")
-    @Scope("prototype")
-    public Movie getActor2() {
-        Actor actor = new Actor("Anushka", "Female", 39);
-        return new Movie(actor);
-    }*/
 
    @Bean(name = "actor")
        public Actor getAct() {
@@ -34,5 +24,18 @@ public class SpringBeanConfiguration {
         return new Movie();
     }
 
+@Bean(name="applicationContextAwareDemo")
+    public ApplicationContextAwareDemo getApplicationContextAwareDemo(){
+       return  new ApplicationContextAwareDemo();
+}
 
+@Bean(name="beanFactoryAwareDemo")
+    public BeanFactoryAwareDemo getBeanFactoryAwareDemo(){
+       return new BeanFactoryAwareDemo();
+}
+
+@Bean(name="beanNameAwareDemo")
+    public BeanNameAwareDemo getBeanNameAwareDemo(){
+       return new BeanNameAwareDemo();
+}
 }
