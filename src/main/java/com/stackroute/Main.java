@@ -12,11 +12,11 @@ public class Main
         context.register(MainConfig.class);
         context.refresh();
 
-        Movie movie = (Movie) context.getBean("movie");
-        //System.out.println(movie);
+        Movie movie = (Movie) context.getBean("movie1");
+        System.out.println(movie);
 
-        Movie movie1 = (Movie) context.getBean("movie1");
-        System.out.println(movie1);
-        System.out.println(movie==movie1);
+//        Movie movie1 = (Movie) context.getBean("movie1");
+//        System.out.println(movie1);
+//        System.out.println(movie==movie1);
     }
 }
